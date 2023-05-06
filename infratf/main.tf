@@ -15,7 +15,7 @@ provider "aws" {
 ### EC2 ###
 
 resource "aws_instance" "marcusServer" {
-  ami = "ami-02396cdd13e9a1257"
+  ami = "ami-016eb5d644c333ccb"
   instance_type = "t2.micro"
   
   subnet_id = aws_subnet.marcuSubnet.id
