@@ -1,32 +1,32 @@
 
 Projeto voltado para observabilidade.
 ===
-Repo voltado para projetos de infra e observabilidade
+Repositório voltado para projetos de infraestrutura e observabilidade
 
 
-# Inicio de tudo
+# Início de tudo
 
-### A ideia inicial do projeto era apenas ter nesse repo os arquivos .tf
+### A ideia inicial do projeto era apenas ter, neste repositório, os arquivos .tf
 
-`Aonde vai ser configurado VPC que contem uma subnet, security group, tabela de roteamento, Internet Gateway e uma EC2.`
+### Onde seria configurada uma VPC que contém uma subnet, security group, tabela de roteamento, Internet Gateway e uma EC2.
 
-### Ai assim que postei a ideia do projeto no linkedin eu pensei, porque não fazer algo a mais? E me surgiu a ideia de subir o zabbix usando o ansible.
+### Então, assim que postei a ideia do projeto no LinkedIn, pensei: "Por que não fazer algo a mais?" E me surgiu a ideia de subir o Zabbix usando o Ansible.
 
 
 # Parte 2
 
-### A segunda parte desse projeto foi justamente, como vou subir o zabbix usando o ansible? Logo de incio fui pesquisar a documentação oficial do zabbix e vi que era algo simples de se fazer, basicamente foi um copia e cola dos comandos que são disponibilizados no site para modulos ansible, demorei umas 2hrs para fazer esse "copia e cola", por que fazia muito tempo que não usava o Ansible em si.
+### A segunda parte desse projeto foi justamente: "Como vou subir o zabbix usando o ansible?" Logo de início, fui pesquisar a documentação oficial do Zabbix e vi que era algo simples de se fazer, basicamente foi só copiar e colar os comandos que são disponibilizados no site para módulos Ansible. Demorei umas 2 horas para fazer esse "copiar e colar", porque fazia muito tempo que não usava o Ansible em si.
 
-`Depois desse tempo fui refinar o código pensando oque falta? Ai me liguei que por padrão não vem configurado o mysql no servidor que estava subindo, a partir disso corri atrás de como vou instalar e condifgurar o mysql para o zabbix? depois de muitas horas de pesquisa e tentativas e erros eu consegui fazer uma role que instala e configura o mysql.`
+### Depois desse tempo, refinei o código pensando no que faltava. Aí me liguei que, por padrão, não vem configurado o MySQL no servidor que estava subindo. A partir disso, corri atrás de como vou instalar e configurar o MySQL para o zabbix? Depois de muitas horas de pesquisa, tentativas e erros, eu consegui fazer uma role que instala e configura o MySQL.
 
 
 # Como usar ?
 
-## Entende-se que na sua maquina já tenha configurado o aws-cli e tenha uma chave ssh cadastrada na aws siga os passos abaixo:
+## Entende-se que na sua máquina já tenha configurado o aws-cli e tenha uma chave ssh cadastrada na aws. Siga os passos abaixo:
 
 `Entre no diretorio` [infratf](./infratf/)
 
-### De inicio e preciso criar a nossa infra na aws, podemos utilizar o comando a seguir para subir a infra citada a cima:
+### De início, é preciso criar a nossa infraestrutura na AWS. Podemos utilizar o comando a seguir para subir a infra citada acima:
 
 ```Bash
 # Exemplo de comando para executar o .tf
@@ -36,7 +36,7 @@ $ terraform apply --auto-approve
 # Particulamente gosto de usar o argumento --auto-approve
 ```
 
-`Após a criação da infra vai ser cuspido no terminal os IP's privados e publicos como no exemplo abaixo: `
+`Após a criação da infraestrutura, serão apresentados no terminal os IPs privados e públicos como no exemplo abaixo: `
 
 ```Bash
 
@@ -49,7 +49,7 @@ ip_publico = "54.210.43.205" # Apenas um exemplo!
 
 
 ```
-## Após isso copie o IP publico e cole no arquivo [hosts.yml](./infratf/Ansible/hosts.yml)
+## Após isso, copie o IP público e cole no arquivo [hosts.yml](./infratf/Ansible/hosts.yml)
 
 `Exemplo:`
 
@@ -60,7 +60,7 @@ ip_publico = "54.210.43.205" # Apenas um exemplo!
 
 ```
 
-## Com o arquivo [Hosts](./infratf/Ansible/hosts.yml) "configurado" está na hora de rodar o nosso [playbook.yml](./infratf/Ansible/playbook.yml).
+## Com o arquivo [Hosts](./infratf/Ansible/hosts.yml) "configurado", está na hora de rodar o nosso [playbook.yml](./infratf/Ansible/playbook.yml).
 
 `Exemplo:`
 
