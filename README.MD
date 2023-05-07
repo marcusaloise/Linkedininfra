@@ -22,7 +22,7 @@ Repositório voltado para projetos de infraestrutura e observabilidade
 
 # Como usar ?
 
-## Entende-se que na sua máquina já tenha configurado o aws-cli e tenha uma chave ssh cadastrada na aws. Siga os passos abaixo:
+### Entende-se que na sua máquina já tenha configurado o aws-cli e tenha uma chave ssh cadastrada na aws. Siga os passos abaixo:
 
 `Entre no diretorio` [infratf](./infratf/)
 
@@ -49,7 +49,7 @@ ip_publico = "54.210.43.205" # Apenas um exemplo!
 
 
 ```
-## Após isso, copie o IP público e cole no arquivo [hosts.yml](./infratf/Ansible/hosts.yml)
+### Após isso, copie o IP público e cole no arquivo [hosts.yml](./infratf/Ansible/hosts.yml)
 
 `Exemplo:`
 
@@ -60,7 +60,7 @@ ip_publico = "54.210.43.205" # Apenas um exemplo!
 
 ```
 
-## Com o arquivo [Hosts](./infratf/Ansible/hosts.yml) "configurado", está na hora de rodar o nosso [playbook.yml](./infratf/Ansible/playbook.yml).
+### Com o arquivo [Hosts](./infratf/Ansible/hosts.yml) "configurado", está na hora de rodar o nosso [playbook.yml](./infratf/Ansible/playbook.yml).
 
 `Exemplo:`
 
@@ -74,4 +74,4 @@ $  ansible-playbook playbook.yml -u ec2-user --private-key id_rsa.pem -i hosts.y
 # -i aponta o arquivo hosts.yml mostrando o ip dos servidores que vão ser afetados pelo playbook
 
 ```
-## De final e jogar o ip publico da nossa maquina no navegador "54.210.43.205/zabbix" e fazer a configuração inicial do zabbix
+### De final e jogar o ip publico da nossa maquina no navegador "54.210.43.205/zabbix" e fazer a configuração inicial do zabbix
