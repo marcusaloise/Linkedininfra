@@ -24,7 +24,7 @@ Repositório voltado para projetos de infraestrutura e observabilidade
 
 ### Entende-se que na sua máquina já tenha configurado o aws-cli e tenha uma chave ssh cadastrada na aws. Siga os passos abaixo:
 
-`Entre no diretorio` [infratf](./infratf/)
+**Entre no diretorio** [infratf](./infratf/)
 
 ### De início, é preciso criar a nossa infraestrutura na AWS. Podemos utilizar o comando a seguir para subir a infra citada acima:
 
@@ -36,7 +36,7 @@ $ terraform apply --auto-approve
 # Particulamente gosto de usar o argumento --auto-approve
 ```
 
-`Após a criação da infraestrutura, serão apresentados no terminal os IPs privados e públicos como no exemplo abaixo: `
+**Após a criação da infraestrutura, serão apresentados no terminal os IPs privados e públicos como no exemplo abaixo:**
 
 ```Bash
 
@@ -51,7 +51,7 @@ ip_publico = "54.210.43.205" # Apenas um exemplo!
 ```
 ### Após isso, copie o IP público e cole no arquivo [hosts.yml](./infratf/Ansible/hosts.yml)
 
-`Exemplo:`
+**Exemplo:**
 
 ```yml
 
@@ -62,7 +62,7 @@ ip_publico = "54.210.43.205" # Apenas um exemplo!
 
 ### Com o arquivo [Hosts](./infratf/Ansible/hosts.yml) "configurado", está na hora de rodar o nosso [playbook.yml](./infratf/Ansible/playbook.yml).
 
-`Exemplo:`
+**Exemplo:**
 
 ```bash
 
