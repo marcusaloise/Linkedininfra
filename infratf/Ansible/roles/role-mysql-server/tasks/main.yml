@@ -1,7 +1,7 @@
 ---
-- name: Include task install_mysql_rhel.yml
+- name: Install_mysql_rhel.yml
   include: install.yml
 
-- name: Include task config_mysql.yml
+- name: Config_mysql.yml
   include: configure.yml
 ...

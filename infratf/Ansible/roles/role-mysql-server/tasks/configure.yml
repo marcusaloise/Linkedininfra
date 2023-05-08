@@ -1,4 +1,4 @@
-- name: Set root password localhost
+- name: Setando root como password do localhost
   mysql_user:
     name: "{{ mysql_root_user }}"
     host: localhost
